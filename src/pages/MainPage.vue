@@ -7,6 +7,31 @@
         <router-view />
       </div>
     </div>
+    <v-bottom-navigation
+      class="bottom d-flex justify-space-between"
+      background-color="#2a2a2b"
+    >
+      <div>
+        <p>test</p>
+      </div>
+      <div>
+        <div class="center" style="width: 200%" >
+          <v-icon size="20" color="white">mdi-shuffle-variant</v-icon>
+          <v-icon size="35" color="white">mdi-skip-previous</v-icon>
+          <v-icon size="40" color="white">mdi-play-circle-outline</v-icon>
+          <v-icon size="35" color="white">mdi-skip-next</v-icon>
+          <v-icon size="20" color="white">mdi-repeat</v-icon>
+          <v-progress-linear
+            value="15"
+            style="width: 100%"
+            class=""
+          ></v-progress-linear>
+        </div>
+      </div>
+      <div>
+        <p>test</p>
+      </div>
+    </v-bottom-navigation>
   </v-container>
 </template>
 
@@ -67,5 +92,9 @@ export default {
 <style lang="scss">
 .container {
   padding: 0 !important;
+}
+.bottom {
+  margin-top: 190px;
+  height: 40%;
 }
 </style>

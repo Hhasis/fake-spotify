@@ -8,6 +8,9 @@ const routes = [
     path: "/",
     name: "MainPage",
     component: () => import("@/pages/MainPage"),
+    redirect: {
+      name: "HomePage"
+    },
     children: [
       {
         path: "/home-page",

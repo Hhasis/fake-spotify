@@ -1,34 +1,38 @@
 <template>
   <div>
-    <div>test</div>
-    <div class="pa-8" style="width: 135%">
-      <h2 class="white--text">{{ bless }}</h2>
-      <v-row class="mt-4">
-        <v-col
-          v-for="(item, index) in topMenu"
-          :key="index"
-          cols="4"
-          class="text-left"
-        >
-          <v-btn
-            plain
-            class="grey lignten-1"
-            elevation="8"
-            color="white"
-            style="width: 100%"
-            ><span class="test">{{ item.name }}</span></v-btn
-          >
-        </v-col>
-      </v-row>
-    </div>
+    <page-layout>
+      <template #content>
+        <div class="pa-8" style="width: 190%">
+          <h2 class="white--text">{{ bless }}</h2>
+          <v-row class="mt-4">
+            <v-col
+              v-for="(item, index) in topMenu"
+              :key="index"
+              cols="4"
+              class="text-left"
+            >
+              <v-card class="background">
+                <p
+                  style="height: 70px"
+                  class="font-weight-bold d-flex align-center"
+                >
+                  {{ item.name }}
+                </p>
+              </v-card>
+            </v-col>
+          </v-row>
+        </div>
+      </template>
+    </page-layout>
   </div>
 </template>
 
 <script>
+import PageLayout from "@/layout/PageLayout.vue";
 import SectionLayout from "@/layout/SectionLayout.vue";
 import { getBless } from "@/utils";
 export default {
-  components: { SectionLayout },
+  components: { SectionLayout, PageLayout },
   name: "HomePage",
   data() {
     return {
@@ -49,4 +53,15 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.background {
+  background-color: rgb(150, 154, 154) !important;
+  transition: 0.5s background-color;
+  color: white !important;
+  cursor: pointer !important;
+}
+
+.background:hover {
+  background-color: rgb(182, 185, 185) !important;
+}
+</style>
